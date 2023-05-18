@@ -1,9 +1,9 @@
 import random
 a=input("Are you ready for a game of Hangman?[Yes/No]: ")
-def check(a,b):
+def check(a,b):#two values will be receieved here a and b , from line 30 basically list k and ' '
     indices=[]
-    for k ,c in enumerate(a):
-        if c == b:
+    for k ,c in enumerate(a): #enumerate basically is a tuple with indices and value  , so is our list was [0,1,0] , enumerate would make it like ((0,0),(1,1),(2,1))
+        if c == b:#k value from above will be our index and our c value will be the letter , this just compares with our argument b which we passed through
             indices.append(k)
     return indices
 if a.lower()=="yes":
@@ -18,21 +18,21 @@ if a.lower()=="yes":
     x=random.choice(p)
     y=random.choice(c)
     z=random.choice(b)
-    k=list(v)
+    k=list(v)#we covert to list for comparision later on
     r=[]
     if i.lower()=="movies":
         print("Your word is so length in a programmers way ,starting from 0 :) is :",len(k)-1)
         print(k)
         print (v)
-        s1=len(k)
-        k1='*'*s1
-        r=list(k1)
-        m1=check(k,' ')
-        m2=check(k,'-')
+        s1=len(k)#finding the length of our list to multiply with *
+        k1='*'*s1 #multiples * with the number of letters in the word , * acts as unknow value
+        r=list(k1) #coverts it to a list
+        m1=check(k,' ') # check for specific value in our list and returns list of all indices with that specific value
+        m2=check(k,'-')#calls the check function which is defined on top (line 3)
         m3=check(k,':')
         m4=check(k,'.')
-        if m1!=[]:
-            for i in m1:
+        if m1!=[]: #iniciates only if value is found and list is returned
+            for i in m1: # for the number presents in list , we pop the * with the index then insert the value in that specific place
                 r.pop(i)
                 r.insert(i,'_')
         if m2!=[]:
@@ -47,12 +47,12 @@ if a.lower()=="yes":
             for i in m4:
                 r.pop(i)
                 r.insert(i,'.')
-        x1=check(k,'a')
+        x1=check(k,'a') # this checks for vowels and does the same thing
         x2=check(k,'e')
         x3=check(k,'i')
         x4=check(k,'o')
         x5=check(k,'u')
-        if " " in k:
+        if " " in k: # this just checks for value and replaces space with '_'
             a=k.index(" ")
             k[a]="_"
         if x1 !=[]:
@@ -76,7 +76,7 @@ if a.lower()=="yes":
                 r.pop(i)
                 r.insert(i,'u')
         print(" _ in your sentence , indicates space")
-        for i in r:
+        for i in r:#for each element in list r , it prints that elements with each element close by
             print(i,end=" ")
         
     elif i.lower()=="games":
@@ -86,4 +86,3 @@ if a.lower()=="yes":
     elif i.lower()=="celebrities":
         print (y)
     elif i.lower()=="books":
-        print (z)
