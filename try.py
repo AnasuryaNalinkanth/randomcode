@@ -86,3 +86,4 @@ if a.lower()=="yes":
     elif i.lower()=="celebrities":
         print (y)
     elif i.lower()=="books":
+        print (z)
