@@ -19,7 +19,6 @@ if a.lower()=="yes":
     y=random.choice(c)
     z=random.choice(b)
     k=list(v)
-    print(k)
     r=[]
     if i.lower()=="movies":
         print("Your word is so length in a programmers way ,starting from 0 :) is :",len(k)-1)
@@ -30,19 +29,32 @@ if a.lower()=="yes":
         r=list(k1)
         m1=check(k,' ')
         m2=check(k,'-')
+        m3=check(k,':')
+        m4=check(k,'.')
         if m1!=[]:
             for i in m1:
                 r.pop(i)
-                r.insert(i,' ')
+                r.insert(i,'_')
         if m2!=[]:
             for i in m2:
                 r.pop(i)
                 r.insert(i,'-')
+        if m3!=[]:
+            for i in m2:
+                r.pop(i)
+                r.insert(i,':')
+        if m4!=[]:
+            for i in m2:
+                r.pop(i)
+                r.insert(i,'.')
         x1=check(k,'a')
         x2=check(k,'e')
         x3=check(k,'i')
         x4=check(k,'o')
         x5=check(k,'u')
+        if " " in k:
+            a=k.index(" ")
+            k[a]="_"
         if x1 !=[]:
             for i in x1:
                 r.pop(i)
@@ -56,15 +68,14 @@ if a.lower()=="yes":
                 r.pop(i)
                 r.insert(i,'i')
         if x4 !=[]:
-            for i in x2:
+            for i in x4:
                 r.pop(i)
                 r.insert(i,'o')
         if x5 !=[]:
-            for i in x2:
+            for i in x5:
                 r.pop(i)
                 r.insert(i,'u')
-        print(r)
-        print("Space seen between *'s indicate a space in orginal sentence")
+        print(" _ in your sentence , indicates space")
         for i in r:
             print(i,end=" ")
         
