@@ -40,11 +40,11 @@ if a.lower()=="yes":
                 r.pop(i)
                 r.insert(i,'-')
         if m3!=[]:
-            for i in m2:
+            for i in m3:
                 r.pop(i)
                 r.insert(i,':')
         if m4!=[]:
-            for i in m2:
+            for i in m4:
                 r.pop(i)
                 r.insert(i,'.')
         x1=check(k,'a')
